@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practical Question 3</title>
+    <script src="../Unit_04-jQuery_1/js/jquery.js"></script>
+
+    <script>
+        $(function() {
+            $('form').submit(function(event) {
+                $('#name-error').text('');
+                $('#email-error').text('');
+                
+                var isValid = true;
+
+                if ($('#name').val() === '') {
+                    $('#name-error').text('Name is required');
+                    isValid = false;
+                }
+
+                if ($('#email').val() === '') {
+                    $('#email-error').text('Email is required');
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+   </script>
+
+    <style>
+        .formError {
+            color: red;
+        }
+    </style>
+   
+</head>
+<body>
+    <form>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name"><br>
+            <span id="name-error" class="formError"></span>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email"><br>
+            <span id="email-error" class="formError"></span>
+            <br>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

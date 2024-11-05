@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practical Question 2</title>
+    <script src="../Unit_04-jQuery_1/js/jquery.js"></script>
+
+    <script>
+        $(function() {
+            $('#calculate-button').click(function() {
+                var totalPrice = 0; 
+
+                $('.cart-item').each(function() {
+                    var price = parseFloat($(this).find('.price').text());
+                    totalPrice += price;
+                });
+                $('#total-price').text(totalPrice.toFixed(2));
+            });
+        });
+   </script>
+   
+</head>
+<body>
+    <div class="cart-item">
+        Item 1: <span class="price">10.99</span>
+    </div>
+    <div class="cart-item">
+        Item 2: <span class="price">5.99</span>
+    </div>
+    <div class="cart-item">
+        Item 3: <span class="price">8.99</span>
+    </div>
+    <button id="calculate-button">Calculate Total</button>
+    <br>
+    Total Price: <span id="total-price"></span>
+</body>
+</html>

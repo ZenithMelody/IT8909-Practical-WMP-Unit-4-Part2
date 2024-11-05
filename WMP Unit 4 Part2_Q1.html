@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Practical Question 1</title>
+    <script src="../Unit_04-jQuery_1/js/jquery.js"></script>
+
+    <script>
+        $(function() {
+
+            /* // I'll be honest prof, I had no idea what the question was asking so most of this
+            was googled D: */
+            var options = ["Option 1", "Option 2", "Option 3"];
+            
+            $.each(options, function(index, value) {
+                $('#mySelect').append($('<option>', {
+                    value: value,
+                    text: value
+                }));
+            });
+        });
+
+   </script>
+
+</head>
+<body>
+    <select id="mySelect">
+        <!-- Dropdown options will be dynamically added here -->
+    </select>
+</body>
+</html>
